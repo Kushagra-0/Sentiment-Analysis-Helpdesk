@@ -21,7 +21,7 @@ const UserSchema: Schema<User> = new mongoose.Schema<User>({
     type: Date,
     default: Date.now,
   },
-});
+}, {timestamps: true});
 
 const UserModel =
   (mongoose.models.User as mongoose.Model<User>) ||

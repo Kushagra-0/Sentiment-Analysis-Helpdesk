@@ -8,7 +8,7 @@ import torch
 from transformers import pipeline
 import tempfile
 
-# Configure logging
+
 logging.basicConfig(level=logging.DEBUG, 
                     format='%(asctime)s - %(levelname)s - %(message)s',
                     handlers=[
@@ -19,9 +19,9 @@ logging.basicConfig(level=logging.DEBUG,
 app = Flask(__name__)
 CORS(app, resources={r"/analyze-call": {"origins": "http://localhost:3000"}})
 
-# Load models with error handling
+
 try:
-    # Use CPU explicitly to avoid FP16 warnings
+    
     device = torch.device('cpu')
     whisper_model = whisper.load_model("base", device=device)
     sentiment_analyzer = pipeline("sentiment-analysis")
@@ -33,7 +33,7 @@ except Exception as e:
 @app.route('/analyze-call', methods=['POST'])
 def analyze_call():
     try:
-        # Detailed logging for request
+        
         logging.info("Received analyze-call request")
         logging.info(f"Request files: {request.files}")
 
@@ -44,7 +44,7 @@ def analyze_call():
         audio_file = request.files['audio']
         logging.info(f"Audio file received: {audio_file.filename}")
         
-        # Use tempfile to create a cross-platform temporary file
+        
         with tempfile.NamedTemporaryFile(delete=False, suffix='.wav') as temp_file:
             audio_file.save(temp_file.name)
             temp_file_path = temp_file.name
@@ -72,7 +72,7 @@ def analyze_call():
             os.unlink(temp_file_path)
             return jsonify({"error": f"Sentiment analysis failed: {str(sentiment_error)}"}), 500
         
-        # Remove temporary file
+        
         os.unlink(temp_file_path)
         
         return jsonify({

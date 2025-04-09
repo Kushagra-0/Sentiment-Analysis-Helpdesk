@@ -17,6 +17,7 @@ export default function Navbar() {
       return [
         { href: '/', label: 'Home' },
         { href: '/analyze', label: 'Analyze' },
+        { href: '/history', label: 'History' },
         { href: '#', label: 'Logout', onClick: () => signOut() }
       ]
     } else {
@@ -30,16 +31,16 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="flex justify-between items-center p-4 bg-white shadow-md">
+    <nav className="flex justify-between items-center p-4 bg-gradient-to-r from-blue-400 to-blue-600 shadow-md">
       {/* Logo */}
-      <div className="text-xl font-bold">
+      <div className="text-xl font-bold text-white">
         Sentiment Analytics
       </div>
 
       {/* Mobile Menu Toggle */}
       <button 
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="text-text md:hidden"
+        className="text-white md:hidden"
       >
         <Menu />
       </button>
@@ -51,14 +52,11 @@ export default function Navbar() {
             <button 
               key={item.label}
               onClick={item.onClick}
-              className={`
-                px-4 py-2 rounded-2xl 
-                font-bold 
+              className={`px-4 py-2 rounded-2xl font-bold text-white 
                 ${pathname === item.href 
-                  ? 'bg-black text-white'
-                  : 'hover:bg-gray-100 text-gray-700'
-                }
-              `}
+                  ? 'bg-blue-700'
+                  : 'hover:bg-blue-500'
+                }`}
             >
               {item.label}
             </button>
@@ -66,14 +64,11 @@ export default function Navbar() {
             <Link
               key={item.label}
               href={item.href}
-              className={`
-                px-4 py-2 rounded-2xl 
-                font-bold 
+              className={`px-4 py-2 rounded-2xl font-bold text-white 
                 ${pathname === item.href 
-                  ? 'bg-black text-white'
-                  : 'hover:bg-gray-100 text-gray-700'
-                }
-              `}
+                  ? 'bg-blue-700'
+                  : 'hover:bg-blue-500'
+                }`}
             >
               {item.label}
             </Link>
@@ -92,14 +87,8 @@ export default function Navbar() {
                   item.onClick()
                   setIsMenuOpen(false)
                 }}
-                className={`
-                  px-4 py-2 rounded-2xl w-full text-center transition-all duration-300
-                  font-bold
-                  ${pathname === item.href
-                    ? 'bg-black text-white'
-                    : 'hover:bg-gray-100 text-gray-700'
-                  }
-                `}
+                className={`px-4 py-2 rounded-2xl w-full text-center transition-all duration-300
+                  font-bold text-black hover:bg-blue-100`}
               >
                 {item.label}
               </button>
@@ -108,14 +97,8 @@ export default function Navbar() {
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`
-                  px-4 py-2 rounded-2xl w-full text-center transition-all duration-300
-                  font-bold
-                  ${pathname === item.href
-                    ? 'bg-black text-white'
-                    : 'hover:bg-gray-100 text-gray-700'
-                  }
-                `}
+                className={`px-4 py-2 rounded-2xl w-full text-center transition-all duration-300
+                  font-bold text-black hover:bg-blue-100`}
               >
                 {item.label}
               </Link>

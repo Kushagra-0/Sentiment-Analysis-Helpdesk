@@ -4,6 +4,8 @@ interface SentimentResult {
       label: string;
       score: number;
     };
+    userId: string;
+    feedbackRating: number;
   }
 
 export default SentimentResult;
