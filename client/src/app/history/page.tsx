@@ -9,7 +9,6 @@ const HistoryPage = () => {
   const [sentimentResults, setSentimentResults] = useState<any[]>([]);
   const [error, setError] = useState<string | null>(null);
   const { data: session } = useSession();
-  const userId = session?.user?.id;
 
   const [showModal, setShowModal] = useState(false);
   const [selectedResultId, setSelectedResultId] = useState<string | null>(null);

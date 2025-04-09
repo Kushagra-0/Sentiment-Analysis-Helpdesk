@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import SentimentResultModel from '@/model/SentimentResult';
-import mongoose from 'mongoose';
 import dbConnect from '@/lib/dbConnect';
 
 export async function POST(request: Request) {

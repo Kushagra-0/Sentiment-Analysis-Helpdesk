@@ -7,7 +7,7 @@ import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { signInSchema } from "@/schemas/signInSchema";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { Loader2 } from "lucide-react"; // Import the loader icon
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react"; // Import useState
@@ -21,7 +21,7 @@ export default function SignInForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState,
   } = useForm<FormData>({
     resolver: zodResolver(signInSchema),
     defaultValues: {

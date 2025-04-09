@@ -4,13 +4,11 @@ import { usePathname } from 'next/navigation'
 import { Menu } from 'lucide-react'
 import { useState } from 'react'
 import { useSession, signOut } from "next-auth/react"
-import { User } from '@/interface/User'
 
 export default function Navbar() {
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { data: session } = useSession()
-  const user: User = session?.user
 
   const getNavItems = () => {
     if (session) {

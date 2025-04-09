@@ -19,7 +19,7 @@ export default function SignUpForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState,
   } = useForm<FormData>({
     resolver: zodResolver(signUpSchema),
     defaultValues: {
@@ -32,9 +32,10 @@ export default function SignUpForm() {
     setIsSubmitting(true); // Enable loader
     try {
       const response = await axios.post("/api/sign-up", data);
+      console.log(response);
       router.push("/login");
     } catch (error) {
-      console.log("Error during register. Please try again.");
+      console.log("Error during register. Please try again.", error);
     } finally {
       setIsSubmitting(false); // Disable loader after response
     }
