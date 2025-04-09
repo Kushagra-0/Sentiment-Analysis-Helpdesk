@@ -6,9 +6,9 @@ import Navbar from '@/components/common/navbar';
 import { useSession } from 'next-auth/react';
 
 const HistoryPage = () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [sentimentResults, setSentimentResults] = useState<any[]>([]);
   const [error, setError] = useState<string | null>(null);
-  const { data: session } = useSession();
 
   const [showModal, setShowModal] = useState(false);
   const [selectedResultId, setSelectedResultId] = useState<string | null>(null);

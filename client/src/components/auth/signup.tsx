@@ -19,7 +19,6 @@ export default function SignUpForm() {
   const {
     register,
     handleSubmit,
-    formState,
   } = useForm<FormData>({
     resolver: zodResolver(signUpSchema),
     defaultValues: {
