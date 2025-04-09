@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Navbar from '@/components/common/navbar';
-import { useSession } from 'next-auth/react';
 
 const HistoryPage = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
