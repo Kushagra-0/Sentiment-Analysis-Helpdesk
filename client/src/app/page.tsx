@@ -1,6 +1,6 @@
 import Navbar from '@/components/common/navbar'
 import Link from 'next/link'
-import { CheckCircle, BarChart2, Shield } from 'lucide-react'
+import { CheckCircle, BarChart2, Shield, History, MessageSquare } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -83,6 +83,67 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Advanced Features Section */}
+      <div className="bg-gradient-to-r from-blue-400 to-blue-600 py-16 px-4 md:px-8 lg:px-32">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-black text-center mb-12 text-white">
+            Advanced Features
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* History Feature */}
+            <div className="bg-white border-2 border-black rounded-3xl p-8 hover:shadow-lg transition-shadow duration-300 hover:bg-blue-50">
+              <div className="flex justify-center mb-6">
+                <History className="w-16 h-16 text-blue-600" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-black text-center">Complete Analysis History</h3>
+              <p className="text-gray-600 font-medium mb-6">
+                Access and review all your previous sentiment analyses in one centralized dashboard. Track changes in customer sentiment over time with intuitive visualizations and trend reports.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-start">
+                  <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">Unlimited historical data retention</span>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">Compare results across time periods</span>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">Export historical data in multiple formats</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Feedback System Feature */}
+            <div className="bg-white border-2 border-black rounded-3xl p-8 hover:shadow-lg transition-shadow duration-300 hover:bg-blue-50">
+              <div className="flex justify-center mb-6">
+                <MessageSquare className="w-16 h-16 text-blue-600" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-black text-center">Smart Feedback System</h3>
+              <p className="text-gray-600 font-medium mb-6">
+                Our AI continuously improves through your feedback. Flag inaccurate analyses and provide corrections to enhance the system's understanding of your specific industry terminology and customer context.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-start">
+                  <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">One-click feedback submission</span>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">Personalized model tuning based on your feedback</span>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">Team collaboration on feedback and annotations</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* How It Works Section */}
       <div className="bg-white py-16 px-4 md:px-8 lg:px-32 bg-gradient-to-r from-blue-400 to-blue-600">
         <div className="max-w-6xl mx-auto">
@@ -121,7 +182,6 @@ export default function Home() {
         </div>
       </div>
 
-
       {/* Call to Action Section */}
       <div className="bg-white py-16 px-4 md:px-8 lg:px-32 bg-gradient-to-r from-blue-400 to-blue-600">
         <div className="max-w-4xl mx-auto text-center">
@@ -135,7 +195,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <Link 
               href="/register" 
-              className="w-full sm:w-auto py-3 px-6 bg-white   text-black font-bold rounded-2xl hover:bg-gray-300 transition-colors duration-300"
+              className="w-full sm:w-auto py-3 px-6 bg-white text-black font-bold rounded-2xl hover:bg-gray-300 transition-colors duration-300"
             >
               Get Started Free
             </Link>
