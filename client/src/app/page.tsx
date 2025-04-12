@@ -123,7 +123,7 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold mb-4 text-black text-center">Smart Feedback System</h3>
               <p className="text-gray-600 font-medium mb-6">
-                Our AI continuously improves through your feedback. Flag inaccurate analyses and provide corrections to enhance the system's understanding of your specific industry terminology and customer context.
+                Our AI continuously improves through your feedback. Flag inaccurate analyses and provide corrections to enhance the systems understanding of your specific industry terminology and customer context.
               </p>
               <div className="space-y-3">
                 <div className="flex items-start">
