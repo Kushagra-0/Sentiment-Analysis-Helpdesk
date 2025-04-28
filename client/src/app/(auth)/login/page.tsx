@@ -6,7 +6,7 @@ const page = () => {
   return (
     <div className="bg-secondary">
       <Navbar />
-      <SignInForm />;
+      <SignInForm />
     </div>
   );
 };
